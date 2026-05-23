@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 3%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 30% 3%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 195 100% 50%;
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #050810;
+    color: #F8FAFC;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(0, 212, 255, 0.3);
+    color: #F8FAFC;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(90deg, #00D4FF, #8B5CF6, #E879F9);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text:hover {
+    background-position: 100% center;
+    transition: background-position 600ms ease;
+  }
+
+  .glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.3);
+    transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00D4FF, #8B5CF6, #E879F9, transparent);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.15);
+  }
+
+  .mono-highlight {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-weight: 500;
+    color: #00D4FF;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .gpu-accelerate {
+    transform: translateZ(0);
+  }
+}
